@@ -13,7 +13,7 @@
             }            
             $auth.login(vm.user, opts).then(function() {
                 toastr.success('You have successfully signed in!');
-                $location.path('/');
+                $location.path('/home');
             }).catch(function(error) {                
                 toastr.error(error.data.details.message);
             });

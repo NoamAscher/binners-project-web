@@ -8,44 +8,14 @@
             controller: 'NavbarController',
             controllerAs: 'navbar'
         };
-        $stateProvider
-        .state('home', {
-            url: '/',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/main/main.html',
-                    controller: 'MainController',
-                    controllerAs: 'vm'
-                },
-                resolve: {
-                    loginRequired: loginRequired
-                }
-            }
-        }).state('dashboard', {
-            url: '/dashboard',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    controller: 'DashboardController',
-                    controllerAs: 'vm'
-                },
-                resolve: {
-                    loginRequired: loginRequired
-                }
-            }
-        }).state('login', {
-            url: '/',
+        $stateProvider.state('login', {
+            url: '/login',
             views: {
                 'vw-topBar': vwTopBar,
                 'vw-content': {
                     templateUrl: 'app/login/login.html',
                     controller: 'LoginController',
                     controllerAs: 'login'
-                },
-                resolve: {
-                    skipIfLoggedIn: skipIfLoggedIn
                 }
             }
         }).state('signup', {
@@ -58,6 +28,32 @@
                     controllerAs: 'signup'
                 }
             }
+        }).state('home', {
+            url: '/',
+            views: {
+                'vw-topBar': vwTopBar,
+                'vw-content': {
+                    templateUrl: 'app/main/main.html',
+                    controller: 'MainController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                loginRequired: loginRequired
+            }
+        }).state('dashboard', {
+            url: '/dashboard',
+            views: {
+                'vw-topBar': vwTopBar,
+                'vw-content': {
+                    templateUrl: 'app/dashboard/dashboard.html',
+                    controller: 'DashboardController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                loginRequired: loginRequired
+            }
         }).state('users', {
             url: '/users',
             views: {
@@ -66,10 +62,10 @@
                     templateUrl: 'app/users/users.html',
                     controller: 'UsersController',
                     controllerAs: 'users'
-                },
-                resolve: {
-                    loginRequired: loginRequired
                 }
+            },
+            resolve: {
+                loginRequired: loginRequired
             }
         }).state('usersEdit', {
             url: '/users/:id',
@@ -79,10 +75,10 @@
                     templateUrl: 'app/users/edit.html',
                     controller: 'UsersEditController',
                     controllerAs: 'edit'
-                },
-                resolve: {
-                    loginRequired: loginRequired
                 }
+            },
+            resolve: {
+                loginRequired: loginRequired
             }
         }).state('timeline', {
             url: '/timeline',
@@ -92,10 +88,10 @@
                     templateUrl: 'app/timeline/timeline.html',
                     controller: 'TimelineController',
                     controllerAs: 'timeline'
-                },
-                resolve: {
-                    loginRequired: loginRequired
                 }
+            },
+            resolve: {
+                loginRequired: loginRequired
             }
         }).state('logout', {
             url: '/logout',
@@ -104,10 +100,10 @@
                     templateUrl: null,
                     controller: 'LogoutController',
                     controllerAs: 'logout'
-                },
-                resolve: {
-                    loginRequired: loginRequired
                 }
+            },
+            resolve: {
+                loginRequired: loginRequired
             }
         });
         $urlRouterProvider.otherwise('/');
@@ -120,7 +116,7 @@
         $authProvider.twitter({
             url: '/auth/twitter'
         });
-
+        /*
         function skipIfLoggedIn($q, $auth) {
             var deferred = $q.defer();
             if ($auth.isAuthenticated()) {
@@ -130,7 +126,7 @@
             }
             return deferred.promise;
         }
-
+        */
         function loginRequired($q, $location, $auth) {
             var deferred = $q.defer();
             if ($auth.isAuthenticated()) {

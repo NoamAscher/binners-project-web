@@ -120,7 +120,6 @@ body {
 	@extend .col-xs-12; 
 	@extend .col-md-12;
 	@extend .col-lg-12;
-  min-height: 300px;
 }
 
 .card-size-4{
@@ -128,7 +127,23 @@ body {
   @extend .col-xs-4; 
   @extend .col-md-4;
   @extend .col-lg-4;
-  height: 400px;
+}
+.grow{  
+  &:hover{
+    background-color: lighten($color-main, 60%);
+    -webkit-box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
+    box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    -o-transform: scale(1.05,1.05);
+    -ms-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);  
+    -webkit-transition: top 0.3s ease, left 0.3s ease;
+    -moz-transition: top 0.3s ease, left 0.3s ease;
+    -o-transition: top 0.3s ease, left 0.3s ease;
+    -ms-transition: top 0.3s ease, left 0.3s ease;
+    transition: top 0.3s ease, left 0.3s ease;  
+  }  
 }
 
 div#navbar-collapse1, div.primary-nav {
@@ -168,24 +183,7 @@ div#navbar-collapse1, div.primary-nav {
   -webkit-box-shadow: 0px 0.5px 0.5px rgba(0,0,0,0.1);
   box-shadow: 0px 0.5px 0.5px rgba(0,0,0,0.1); 
   border: 0px;
-  &:hover{
-    background-color: lighten($color-main, 60%);
-    -webkit-box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
-    box-shadow: 1px 1px 7px rgba(0,0,0,0.9);
-    -webkit-transform: scale(1.05,1.05);
-    -moz-transform: scale(1.05,1.05);
-    -o-transform: scale(1.05,1.05);
-    -ms-transform: scale(1.05,1.05);
-    transform: scale(1.05,1.05);  
-
-    -webkit-transition: top 0.3s ease, left 0.3s ease;
-    -moz-transition: top 0.3s ease, left 0.3s ease;
-    -o-transition: top 0.3s ease, left 0.3s ease;
-    -ms-transition: top 0.3s ease, left 0.3s ease;
-    transition: top 0.3s ease, left 0.3s ease;  
-  }
 }
-
 .white-green{
     @include bg-gradient-l2r($color-main, #fff); 
 }
