@@ -8,7 +8,21 @@
             controller: 'NavbarController',
             controllerAs: 'navbar'
         };
-        $stateProvider.state('dashboard', {
+        $stateProvider
+        .state('home', {
+            url: '/',
+            views: {
+                'vw-topBar': vwTopBar,
+                'vw-content': {
+                    templateUrl: 'app/main/main.html',
+                    controller: 'MainController',
+                    controllerAs: 'vm'
+                },
+                resolve: {
+                    loginRequired: loginRequired
+                }
+            }
+        }).state('dashboard', {
             url: '/dashboard',
             views: {
                 'vw-topBar': vwTopBar,
