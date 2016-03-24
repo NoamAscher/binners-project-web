@@ -3,7 +3,7 @@
     angular.module('bProject')
     .controller('LoginController', LoginController);
     
-    function LoginController($location, $auth, toastr, Api) {
+    function LoginController($location, $auth, toastr, Api,$log) {
         var vm = this;    
 
         vm.login = function() {
@@ -24,7 +24,7 @@
         };
 
         vm.authenticate = function(provider) {
-            console.log(provider);
+            $log.debug(provider);
             $auth.authenticate(provider).then(function() {
                 toastr.success('You have successfully signed in with ' + provider + '!');
                 $location.path('/');

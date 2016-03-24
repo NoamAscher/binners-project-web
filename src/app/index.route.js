@@ -8,9 +8,8 @@
             controller: 'NavbarController',
             controllerAs: 'navbar'
         };
-
         $stateProvider.state('home', {
-            url: '/home',
+            url: '/',
             views: {
                 'vw-topBar': vwTopBar,
                 'vw-content': {
@@ -19,12 +18,11 @@
                     controllerAs: 'main'
                 },
                 resolve: {
-                  loginRequired: loginRequired
-                }  
+                    loginRequired: loginRequired
+                }
             }
-        })
-        .state('login', {
-            url: '/',
+        }).state('login', {
+            url: '/login',
             views: {
                 'vw-topBar': vwTopBar,
                 'vw-content': {
@@ -35,9 +33,8 @@
                 resolve: {
                     skipIfLoggedIn: skipIfLoggedIn
                 }
-            }          
-        })
-        .state('signup', {
+            }
+        }).state('signup', {
             url: '/signup',
             views: {
                 'vw-topBar': vwTopBar,
@@ -46,9 +43,8 @@
                     controller: 'SignupController',
                     controllerAs: 'signup'
                 }
-            }          
-        })  
-        .state('users', {
+            }
+        }).state('users', {
             url: '/users',
             views: {
                 'vw-topBar': vwTopBar,
@@ -58,11 +54,10 @@
                     controllerAs: 'users'
                 },
                 resolve: {
-                  loginRequired: loginRequired
-                }                
+                    loginRequired: loginRequired
+                }
             }
-        })  
-        .state('usersEdit', {
+        }).state('usersEdit', {
             url: '/users/:id',
             views: {
                 'vw-topBar': vwTopBar,
@@ -72,11 +67,10 @@
                     controllerAs: 'edit'
                 },
                 resolve: {
-                  loginRequired: loginRequired
-                }                
+                    loginRequired: loginRequired
+                }
             }
-        })                               
-        .state('timeline', {
+        }).state('timeline', {
             url: '/timeline',
             views: {
                 'vw-topBar': vwTopBar,
@@ -86,11 +80,10 @@
                     controllerAs: 'timeline'
                 },
                 resolve: {
-                  loginRequired: loginRequired
-                }                
+                    loginRequired: loginRequired
+                }
             }
-        })
-        .state('logout', {
+        }).state('logout', {
             url: '/logout',
             views: {
                 'vw-content': {
@@ -99,22 +92,21 @@
                     controllerAs: 'logout'
                 },
                 resolve: {
-                  loginRequired: loginRequired
-                }  
+                    loginRequired: loginRequired
+                }
             }
-        });        
-
+        });
         $urlRouterProvider.otherwise('/');
-        
         $authProvider.facebook({
             clientId: '756473507829984'
         });
         $authProvider.google({
-          clientId: '631036554609-v5hm2amv4pvico3asfi97f54sc51ji4o.apps.googleusercontent.com'
+            clientId: '631036554609-v5hm2amv4pvico3asfi97f54sc51ji4o.apps.googleusercontent.com'
         });
         $authProvider.twitter({
-          url: '/auth/twitter'
+            url: '/auth/twitter'
         });
+
         function skipIfLoggedIn($q, $auth) {
             var deferred = $q.defer();
             if ($auth.isAuthenticated()) {

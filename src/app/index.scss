@@ -93,6 +93,10 @@ body {
   background-attachment: fixed; 
 }
 
+.content{
+  margin-top: 100px;
+}
+
 .logo {
   width: 60px;
 }
@@ -154,10 +158,16 @@ div#navbar-collapse1, div.primary-nav {
   background: white;
   -webkit-box-shadow: 0px 0.5px 0.5px rgba(0,0,0,0.1);
   box-shadow: 0px 0.5px 0.5px rgba(0,0,0,0.1); 
+  border: 0px;
 }
 
 .white-green{
     @include bg-gradient-l2r($color-main, #fff); 
+}
+
+.lightgreen-green{
+    // @include bg-gradient-l2r($color-main, #2F953F); 
+    @include bg-gradient-l2r($color-main, #000); 
 }
 
 .yellow-green{
@@ -185,18 +195,24 @@ div#navbar-collapse1, div.primary-nav {
   text-align: middle;
 }
 
-.card-body button {
-  @extend .btn;
-  @extend .btn-default;  
-  padding-left: 25px;
-  padding-right: 25px;
-  color: #AAAAAA;
-  font: 16px; 
-  font-weight: 600;
-  border: 2px solid #AAAAAA;
-  @include border-radius(none, 20px); 
+.card-body{ 
+  padding: 10px;
+  p {
+    padding: 20px;
+    color: $color-main;
+  }  
+  button {
+    @extend .btn;
+    @extend .btn-default;  
+    padding-left: 25px;
+    padding-right: 25px;
+    color: #AAAAAA;
+    font: 16px; 
+    font-weight: 600;
+    border: 2px solid #AAAAAA;
+    @include border-radius(none, 20px); 
+  }
 }
-
 .btn-info{  
   @extend .btn;
   @extend .btn-info;  
@@ -230,11 +246,6 @@ div#navbar-collapse1, div.primary-nav {
 
 .card-title h4 {
   color: $white; 
-}
-
-.card-body p {
-  padding: 20px;
-  color: $color-main;
 }
 
 div[class*='reflected']:before {
@@ -385,6 +396,17 @@ div[class*='reflected']:after {
 //   transform: scale(1.05,1.05);
 // }
 
+@media (max-width: 480px) {
+    * {
+        font-size: 10px!important;
+    }
+    .card-size, .container, table {
+        padding: 0px !important;
+    }    
+    tbody tr td {
+      font-size: 8px!important;
+    }
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
