@@ -15,7 +15,8 @@
       <ul class="nav navbar-nav">
         <li ng-class="{ active: navbar.isActive('/')}"><a href="#/">Home</a></li>
         <li ng-if="!navbar.isAuthenticated()"><a href="#/login">Login</a></li>
-        <li ng-if="!navbar.isAuthenticated()"><a href="#/signup">Sign up</a></li>
+        <li ng-if="!navbar.isAuthenticated()"><a href="#/signup">Sign up</a></li>        
+        <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/dashboard')}"><a href="#/dashboard">Dashboard</a></li>
         <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/timeline')}"><a href="#/timeline">Timeline</a></li>
         <li ng-if="navbar.isAuthenticated()" ng-class="{ active: navbar.isActive('/users')}"><a href="#/users">Users</a></li>                                    
       </ul>

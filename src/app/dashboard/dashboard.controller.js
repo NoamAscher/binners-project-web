@@ -3,10 +3,10 @@
 
   angular
     .module('bProject')
-    .controller('MainController', MainController);
+    .controller('DashboardController', DashboardController);
 
   /** @ngInject */
-  function MainController(toastr,$scope, $timeout, $compile, $rootScope) {
+  function DashboardController(toastr,$scope, $timeout, $compile, $document) {
     var vm = this;
     vm.showToastr = showToastr;
     function showToastr() {
@@ -48,12 +48,10 @@
             y: 4.77
     }]; 
 
-    this.$on('window.resize', function() {
-        console.log('resize');
+    $scope.$on('window.resize', function() {
         $timeout( function() {        
-            var element = document.getElementById("chart1");
-            console.log(element);
-            $compile(element)(this)
+            var element = $document.find("chart1");
+            $compile(element)($scope)
         }); 
     });    
 

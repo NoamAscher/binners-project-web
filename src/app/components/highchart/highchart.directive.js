@@ -2,8 +2,8 @@
     'use strict';
     angular.module('bProject')
     .directive('hcChart', hcChart)
-    .directive('hcPieChart', hcPieChart)
-    .controller('HighChartController', HighChartController);
+    .directive('hcPieChart', hcPieChart);
+    //.controller('HighChartController', HighChartController);
     
     function hcPieChart() {
         var directive = {
@@ -38,7 +38,7 @@
             }
         };
         return directive;
-    };   
+    }   
 
     /** @ngInject */
     function hcChart() {
@@ -54,8 +54,6 @@
         };
         return directive;
     }
-
-    function HighChartController($scope, $auth, $location) {
-        var vm = this;     
-    }    
+    // function HighChartController($scope, $auth, $location) {            
+    // }    
 })();            
