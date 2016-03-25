@@ -19,7 +19,7 @@ You first need to install [node.js](http://nodejs.org/) if you do not already ha
     1. Move into the project directory `$ cd binners-project-web`
     2. Run `$ npm install`
     3. Run `$ bower install`
-    4. Run `$ gulp serve`
+    4. Run `$ gulp serve` or `$npm start`
     6. Connect to the server using `http://localhost:3000`
     7. Run `$ gulp test` for unit-test
 
