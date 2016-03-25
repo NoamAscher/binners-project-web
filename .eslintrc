@@ -10,5 +10,8 @@
     "module": true,
     "inject": true,
     "Highcharts": false
-  }
+  },
+  "rules":{
+      "no-console":0
+  }  
 }

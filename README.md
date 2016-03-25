@@ -21,13 +21,7 @@ You first need to install [node.js](http://nodejs.org/) if you do not already ha
     3. Run `$ bower install`
     4. Run `$ gulp serve`
     6. Connect to the server using `http://localhost:3000`
+    7. Run `$ gulp test` for unit-test
 
 ## Any problems?
 Let us know at emersonmellado@gmail.com
-
-
-
-
-
-
-
