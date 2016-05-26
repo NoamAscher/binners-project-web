@@ -1,8 +1,8 @@
 (function() {
     'use strict';
-    angular.module('bProject').controller('SignupController', SignupController);
+    angular.module('bProject').controller('PickupController', PickupController);
 
-    function SignupController($location, $auth, toastr, Api, $log) {
+    function PickupController($location, $auth, toastr, Api, $log) {
         var vm = this;
         vm.signup = function() {
             var opts = {

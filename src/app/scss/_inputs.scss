@@ -5,23 +5,9 @@
 // bower:scss
 // endbower
 
-@mixin font-color {
-  color: $white;
-}
-
-@mixin bg-transparent {
-   background-color:rgba(0,0,0,0) !important;
-   border:none !important;
-   box-shadow:none !important;    
-}
-
 h3 {
   font-weight:100;
   color: $white;
-}
-
-.er-border{
-  border-bottom: 1px solid rgba(255,255,255, .3);
 }
 
 .transparent-input{

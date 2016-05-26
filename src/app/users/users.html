@@ -1,35 +1,29 @@
-<div class="container">
+<bp-navbar></bp-navbar>
+<div class="container page">
     <div class="page-header">
         <h2>Users</h2>
     </div>
-    <div class="card-size">
-        <div class="card card-green">
-            <div class="card-title lightgreen-green">
-                <h4>Edit the details of a user</h4>
-            </div>
-            <div class="card-body">
-              <table class="table table-hover table-responsive" datatable="ng">
-                <thead>
-                  <tr>
+    <div class="page-body">
+        <div class="card-title lightgreen-green">
+            <h4>Edit the details of a user</h4>
+        </div>
+        <table class="table table-hover table-responsive" datatable="ng">
+            <thead>
+                <tr>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Active</th>
                     <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="u in users.users">
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in users.users">
                     <td>{{u.email}}</td>
                     <td>{{u.phone}}</td>
                     <td>{{u.active}}</td>
                     <td><a ui-sref="usersEdit({ id: u._id})" class="btn btn-default"><i class="fa fa-edit" style="color: #000"></i>Edit</a></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>                    
-            <div class="card-border1">
-                <div class="card-border2">&nbsp;</div>
-            </div>                      
-        </div>
-    </div>    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -1,0 +1,32 @@
+@mixin font-color {
+  color: $white;
+}
+
+@mixin bg-transparent {
+   background-color:rgba(0,0,0,0) !important;
+   border:none !important;
+   box-shadow:none !important;    
+}
+
+@mixin border-radius($radius: 3px, $without-border: none){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  @if $without-border == top {
+    border-radius: 0 0 $radius $radius;
+  } @else if $without-border == bottom {       
+     border-radius: $radius $radius 0 0;
+  } @else {
+    border-radius: $radius;
+  }
+}
+
+@mixin bg-gradient-l2r($start-colour:#fff, $end-colour:#000) {
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left bottom, right top, from($start-colour), to($end-colour));
+    background-image: -webkit-linear-gradient(60deg, $start-colour, $end-colour);
+    background-image:    -moz-linear-gradient(60deg, $start-colour, $end-colour);
+    background-image:     -ms-linear-gradient(60deg, $start-colour, $end-colour);
+    background-image:      -o-linear-gradient(60deg, $start-colour, $end-colour);
+    background-image:         linear-gradient(60deg, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}', gradientType='1');
+}

@@ -1,11 +1,9 @@
 (function() {
     'use strict';
     angular.module('bProject')
-    .directive('vhNavbar', vhNavbar)
-    .controller('NavbarController', NavbarController);
-    
-    /** @ngInject */
-    function vhNavbar() {
+    .directive('bpNavbar', bpNavbar);    
+
+    function bpNavbar() {
         var directive = {
             restrict: 'E',
             templateUrl: 'app/components/navbar/navbar.html',
@@ -13,13 +11,13 @@
                 creationDate: '='
             },
             controller: NavbarController,
-            controllerAs: 'vm',
+            controllerAs: 'navbar',
             bindToController: true
         };
         return directive;
     }
 
-    function NavbarController($scope, $auth, $location) {
+    function NavbarController($auth, $location) {
         var vm = this;
         vm.isAuthenticated = function() {
             return $auth.isAuthenticated();

@@ -7,5 +7,7 @@
 
   /** @ngInject */
   function MainController() {
+    var vm = this;
+    vm.username = "Emerson Mellado";
   }
 })();

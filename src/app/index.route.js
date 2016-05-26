@@ -3,109 +3,72 @@
     angular.module('bProject').config(routerConfig);
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider, $authProvider) {
-        var vwTopBar = {
-            templateUrl: 'app/components/navbar/navbar.html',
-            controller: 'NavbarController',
-            controllerAs: 'navbar'
-        };
+
         $stateProvider.state('login', {
             url: '/login',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/login/login.html',
-                    controller: 'LoginController',
-                    controllerAs: 'login'
-                }
-            }
+            templateUrl: 'app/login/login.html',
+            controller: 'LoginController',
+            controllerAs: 'login'
         }).state('signup', {
             url: '/signup',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/signup/signup.html',
-                    controller: 'SignupController',
-                    controllerAs: 'signup'
-                }
-            }
+            templateUrl: 'app/signup/signup.html',
+            controller: 'SignupController',
+            controllerAs: 'signup'
+        }).state('pickup', {
+            url: '/pickup',
+            templateUrl: 'app/pickup/pickup.html',
+            controller: 'PickupController',
+            controllerAs: 'pickup'
         }).state('home', {
             url: '/',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/main/main.html',
-                    controller: 'MainController',
-                    controllerAs: 'vm'
-                }
-            },
+            templateUrl: 'app/main/main.html',
+            controller: 'MainController',
+            controllerAs: 'main',
             resolve: {
                 loginRequired: loginRequired
             }
         }).state('dashboard', {
             url: '/dashboard',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    controller: 'DashboardController',
-                    controllerAs: 'vm'
-                }
-            },
+            templateUrl: 'app/dashboard/dashboard.html',
+            controller: 'DashboardController',
+            controllerAs: 'vm',
             resolve: {
                 loginRequired: loginRequired
             }
         }).state('users', {
             url: '/users',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/users/users.html',
-                    controller: 'UsersController',
-                    controllerAs: 'users'
-                }
-            },
+            templateUrl: 'app/users/users.html',
+            controller: 'UsersController',
+            controllerAs: 'users',
             resolve: {
                 loginRequired: loginRequired
             }
         }).state('usersEdit', {
             url: '/users/:id',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/users/edit.html',
-                    controller: 'UsersEditController',
-                    controllerAs: 'edit'
-                }
-            },
+            templateUrl: 'app/users/edit.html',
+            controller: 'UsersEditController',
+            controllerAs: 'edit',
             resolve: {
                 loginRequired: loginRequired
             }
         }).state('timeline', {
             url: '/timeline',
-            views: {
-                'vw-topBar': vwTopBar,
-                'vw-content': {
-                    templateUrl: 'app/timeline/timeline.html',
-                    controller: 'TimelineController',
-                    controllerAs: 'timeline'
-                }
-            },
+            templateUrl: 'app/timeline/timeline.html',
+            controller: 'TimelineController',
+            controllerAs: 'timeline',
             resolve: {
                 loginRequired: loginRequired
             }
         }).state('logout', {
             url: '/logout',
-            views: {
-                'vw-content': {
-                    templateUrl: null,
-                    controller: 'LogoutController',
-                    controllerAs: 'logout'
-                }
-            },
+            templateUrl: null,
+            controller: 'LogoutController',
+            controllerAs: 'logout',
             resolve: {
                 loginRequired: loginRequired
             }
         });
+
         $urlRouterProvider.otherwise('/');
         $authProvider.facebook({
             clientId: '756473507829984'

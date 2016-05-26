@@ -10,8 +10,25 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
-/* Toggle Styles */
+.page-main{
+    //height: 100%;
+    //margin-top: 80px;
+}
+.page{
+    padding: 20px;
+    .page-header{
+        //margin: 0px;
+        //padding: 20px;
+        border: 0px;
+        background: #fff;
+        h2{
+            color: #000;
+        }
+    }
+}
+ .page-body{
+    background: white;    
+ }
 
 #wrapper {
     padding-left: 0;
